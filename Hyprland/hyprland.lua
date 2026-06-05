@@ -177,6 +177,9 @@ hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 -- move/resize windows with mouse
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+-- screenshot
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd('grim -g "$(slurp -d)" - | wl-copy'))
+hl.bind("print", hl.dsp.exec_cmd('grim -o "$(hyprctl monitors | awk \'/Monitor/{mon=$2} /focused: yes/{print mon}\')" - | wl-copy'))
 
 
 --------------------------------
