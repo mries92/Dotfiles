@@ -19,6 +19,11 @@ hl.monitor({
     mode     = "highrr",
     position = "auto",
     scale    = "auto",
+    -- bitdepth = 10,
+    -- cm       = "hdr",
+    -- sdrbrightness = 2.0,
+    -- sdrsaturation = 1.3,
+    -- sdr_eotf      = "srbg",
 })
 
 
@@ -39,6 +44,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("waybar")
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("udiskie")
+    hl.exec_cmd("hypridle")
 end)
 
 
@@ -166,6 +172,7 @@ hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({ direction = "left" }))
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
 hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 -- workspaces
 for i = 1, 10 do
     local key = i % 10 -- 10 maps to key 0

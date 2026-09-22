@@ -1,13 +1,14 @@
+-- Lazy bootstrap
+require("config.lazy")
+
 -- Vim settings
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
+vim.cmd.colorscheme("dracula")
 
 -- Keybinds
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, {})
-
--- Lazy
-require("config.lazy")
+vim.keymap.set('n', '<leader>e', function() vim.diagnostic.open_float() end, {})
 
 -- Telescope
 local builtin = require('telescope.builtin')
@@ -28,15 +29,17 @@ require('nvim-treesitter.configs').setup {
 vim.lsp.enable('bashls')
 vim.lsp.enable('clangd')
 vim.lsp.enable('pyright')
+vim.lsp.enable('rust_analyzer')
 vim.keymap.set('n', 'gd', builtin.lsp_definitions, {})
 vim.keymap.set('n', 'gD', builtin.lsp_type_definitions, {})
 vim.keymap.set('n', 'gi', builtin.lsp_implementations, {})
 
 -- Cmp
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-vim.lsp.config['bashls'] = { capabilities = capabiliites }
-vim.lsp.config['clangd'] = { capabilities = capabiliites }
-vim.lsp.config['pyright'] = { capabilities = capabiliites }
+vim.lsp.config['bashls'] = { capabilities = capabilities }
+vim.lsp.config['clangd'] = { capabilities = capabilities }
+vim.lsp.config['pyright'] = { capabilities = capabilities }
+vim.lsp.config['rust_analyzer'] = { capabilities = capabilities }
 local cmp = require("cmp")
 cmp.setup({
     mapping = cmp.mapping.preset.insert({

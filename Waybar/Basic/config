@@ -7,6 +7,6 @@
         "max-length": 50
     },
     "clock": {
-        "format-alt": "{:%a, %d. %b  %H:%M}"
+        "format": "{:%r %D}"
     }
 }
