@@ -1,5 +1,3 @@
 return {
-  {
     'dracula/vim'
-  }
 }

@@ -19,13 +19,18 @@ hl.monitor({
     mode     = "highrr",
     position = "auto",
     scale    = "auto",
-    -- bitdepth = 10,
-    -- cm       = "hdr",
-    -- sdrbrightness = 2.0,
-    -- sdrsaturation = 1.3,
+    bitdepth = 10,
+    cm       = "hdr",
+    sdrbrightness = 1.6,
+    sdrsaturation = 1.3,
     -- sdr_eotf      = "srbg",
 })
 
+hl.config({
+    render = {
+        cm_auto_hdr = 1
+    }
+})
 
 ---------------------
 ---- MY PROGRAMS ----
