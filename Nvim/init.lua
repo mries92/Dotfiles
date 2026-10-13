@@ -20,7 +20,7 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags)
 vim.lsp.config('*', {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
 })
-vim.lsp.enable({'bashls', 'clangd', 'pyright', 'rust_analyzer'})
+vim.lsp.enable({'bashls', 'clangd', 'pyright', 'rust_analyzer', 'lua_ls'})
 vim.keymap.set('n', '<leader>d', builtin.lsp_definitions)
 vim.keymap.set('n', '<leader>D', builtin.lsp_type_definitions)
 vim.keymap.set('n', '<leader>i', builtin.lsp_implementations)
